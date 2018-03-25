@@ -65,6 +65,7 @@ Google HomeやAmazon Echoなどの音声アシスタントとIFTTTとGoogle Fire
 ### 必要なもの
 - GR-CITRUS
 - WA-MIKAN
+- microSD
 - LED　:　動作確認用。１７ピンとGNDに接続してください。
 
 ### WA-MIKANのファームウェアの更新
@@ -74,7 +75,7 @@ Google HomeやAmazon Echoなどの音声アシスタントとIFTTTとGoogle Fire
 SSL通信に対応するためカスタマイズしたファームウェアを使います。GR-CITRUSのリセットボタンを押し、このリポジトリ内に含まれるcitrus_sketch.binを書き込んでください。
 
 このファームウェアはオリジナルのv.2.42をベースに、上記がじぇるね工房の筆者の方のソースファイルを参考にSSL通信機能を追加しています。
-また、メモリ使用量削減のためMP3クラスとWifiクラスの一部のメソッドを削除しています。それらの機能を使うことはできません。
+また、メモリ使用量削減のためMP3クラスとWifiクラスの一部のメソッドなどを削除しています。それらの機能を使うことはできません。ソースコードは[こちら](https://github.com/takjn/wrbb-v2lib-firm/tree/ssl_support_experimental)にあります。
 
 ### 接続先の修正
 main.rbを開き、wifiのアクセスポイントやクラウドの接続先情報を各自の環境にあわせて修正してください。
