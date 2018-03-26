@@ -35,7 +35,7 @@ loop do
     # クラウドに接続してデータを取得し、SDカードに結果を保存する
     unless WiFi.httpsGetSD("response.txt", SERVER) == 1 then
         puts "https get error."
-        next
+        delay 60000
     end
 
     # SDカードに保存した結果から、ヘッダの行を読み飛ばして最後の行（HTTP Body）だけを取得する
@@ -45,6 +45,7 @@ loop do
         result << c.chr
         previous_char = c
     end
+    SD.close(0)
 
     # 前回の取得結果と今回の取得結果が異なる場合のみ処理をする
     unless previous_result == result then
